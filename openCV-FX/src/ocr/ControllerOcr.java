@@ -134,9 +134,11 @@ public class ControllerOcr {
 		}
 		
 		Image image = new Image(new ByteArrayInputStream(buffer.toArray()));
-
-			System.out.println(process("ocr.png"));
+		String tekst = process("ocr.png");
 		
+		if(tekst.length()>0 && tekst.charAt(0)=='.' && tekst.charAt(tekst.length()-1)=='.') {
+			System.out.println(tekst);
+		}
 		
 		return image;
 	}
